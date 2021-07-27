@@ -84,11 +84,10 @@ if __name__ == "__main__":
             webbrowser.open("www.github.com") 
 
         elif 'play' in query:
-             
-            query = query.replace("search", "")
-            query = query.replace("play", "")         
-            webbrowser.open(query)
-
+            song = query.replace('play', '')
+            speak('playing ' + song)
+            pywhatkit.playonyt(song)
+            
         elif 'the time' in query:
             strTime = datetime.datetime.now().strftime("%H:%M:%S")    
             speak(f"Sir, the time is {strTime}")
